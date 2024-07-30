@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-List Project</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/font.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Gabarito&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header-section">
+      <h1 class="heading">Todo List</h1>
+    </header>
+
+    <section class="container">
+      <div class="form__container">
+        <form class="todo-form">
+          <input type="text" class="todo-input" />
+          <button class="todo-btn">
+            <i class="fas fa-plus-circle"></i>
+          </button>
+        </form>
+      </div>
+
+      <div class="todo-filter">
+        <select class="filter-todos" name="todo">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+        <span><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+      <div class="todo__container">
+        <ul class="todo-list">
+          <!-- <li class="todo">
+            <p class="todo__title"></p>
+            <span class="todo__createdat"></span>
+            <button><i class="todo__check far fa-check-square"></i></button>
+            <button><i class="todo__remove far fa-trash-alt"></i></button>
+          </li> -->
+        </ul>
+      </div>
+    </section>
+
+    <section class="modal-section">
+      <div class="backdrop hidden"></div>
+      <div class="modal hidden">
+        <div class="modal__header">
+          <h2>Edit Todo</h2>
+          <button class="close-modal"><i class="fa-solid fa-check"></i></button>
+        </div>
+        <input class="modal__input" />
+      </div>
+    </section>
+
+    <script src="./JS/todo-list.js"></script>
+  </body>
+</html>

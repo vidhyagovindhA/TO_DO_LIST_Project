@@ -1,0 +1,268 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+:root {
+  --primaryColor: #6d28d9;
+  --secondaryColor: #ede9fe;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #7c7c7c;
+  --secondayGrey: #ccc;
+  --mainTransition: all 0.3s linear;
+  --mainRed: #db2777;
+  --bodyColor: #f6f6f6;
+}
+
+body {
+  color: var(--mainBlack);
+  background: rgb(2, 132, 199);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 132, 199, 1) 50%,
+    rgba(125, 211, 252, 1) 100%
+  );
+}
+
+.heading {
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  font-size: 4rem;
+  font-family: "Dancing Script", cursive;
+  color: var(--bodyColor);
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+}
+
+.form__container {
+  width: 25rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.todo__container {
+  width: 25rem;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  margin-top: 1rem;
+}
+
+.todo-form {
+  display: flex;
+  background-color: var(--mainWhite);
+  /* border: 2px solid var(--secondayGrey); */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.todo-input {
+  flex: 1;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.todo-input,
+.todo-btn {
+  padding: 1rem;
+  outline: none;
+  font-size: 1rem;
+  background-color: none;
+}
+
+.todo-btn {
+  cursor: pointer;
+  color: var(--primaryColor);
+  transition: var(--mainTransition);
+}
+.todo-btn:hover {
+  color: var(--mainWhite);
+  background-color: var(--primaryColor);
+}
+
+.todo-filter {
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  margin-left: 2rem;
+  background-color: var(--mainWhite);
+  /* border: 2px solid var(--secondayGrey); */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.filter-todos {
+  width: 7rem;
+  flex: 1;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  font-family: "Gabarito", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--primaryColor);
+}
+
+.todo-filter i {
+  color: var(--primaryColor);
+  /* padding: 0.5rem 0.8rem 0.5rem 0; */
+}
+
+.todo {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--mainWhite);
+  border-radius: 0.8rem;
+  padding: 0.8rem 1rem;
+  transition: var(--mainTransition);
+}
+
+.todo__title {
+  flex: 1;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--primaryColor);
+}
+
+.todo__createdat {
+  font-size: 0.9rem;
+  color: var(--mainBlack);
+}
+
+.todo button {
+  display: block;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.far.fa-pen-to-square {
+  color: #15803d;
+}
+
+.far.fa-check-square {
+  color: var(--primaryColor);
+}
+
+.far.fa-trash-alt {
+  color: var(--mainRed);
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+button > i {
+  pointer-events: none;
+}
+
+.backdrop {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  backdrop-filter: blur(3px);
+  transition: var(--mainTransition);
+}
+
+.modal {
+  position: absolute;
+  padding: 2rem 2.5rem;
+  width: 40%;
+  max-width: 50rem;
+  border: 1px solid #9ca3af;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: var(--bodyColor);
+  border-radius: 18px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  transition: var(--mainTransition);
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal__header h2 {
+  font-family: "Dancing Script", cursive;
+}
+
+.hidden {
+  display: none;
+}
+
+.close-modal {
+  cursor: pointer;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  color: #15803d;
+  border: 1px solid #15803d;
+  border-radius: 6px;
+  background-color: transparent;
+}
+.close-modal:hover {
+  color: var(--mainWhite);
+  background-color: #15803d;
+}
+
+.modal__input {
+  width: 100%;
+  padding: 0.4rem 1rem;
+  margin-top: 1rem;
+  outline: none;
+  border: 1px solid var(--mainGrey);
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 720px) {
+  body {
+    background-position: left;
+  }
+  .heading {
+    font-size: 3rem;
+  }
+  .form__container {
+    width: 20rem;
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  .todo__container {
+    width: 20rem;
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
+  .todo-filter {
+    width: 9rem;
+    justify-self: center;
+    padding: 0.5rem 0.8rem;
+    grid-column: 1/3;
+    grid-row: 2/3;
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+  .modal {
+    width: 65%;
+  }
+}
